@@ -63,14 +63,7 @@ mkdir -p build && cd build
 make
 
 %install
-	
-%make_install %{?_smp_mflags}
-#cd gdb-$pkgver/build;
-#make -C gdb DESTDIR=$pkgdir install;
-#rm -r "$pkgdir"/usr/include/gdb/;
-#rm -r "$pkgdir"/usr/share/gdb/;
-#rm -r "$pkgdir"/usr/share/info/;
-#rm -r "$pkgdir"/usr/share/man/man5/
+make -C gdb install %{?_smp_mflags}
 
 
 %files
