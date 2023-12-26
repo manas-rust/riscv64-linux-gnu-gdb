@@ -12,12 +12,21 @@ URL:		https://www.gnu.org/software/gdb/
 
 Source0:	https://ftp.gnu.org/gnu/gdb/%{tarname}.tar.xz
 
-BuildRequires:	boost
+# BuildRequires:	boost
 BuildRequires:	texinfo
 BuildRequires:	readline-devel
 BuildRequires:	expat-devel
 BuildRequires:	gcc-c++
 BuildRequires:	python3-devel
+BuildRequires:	source-highlight-devel
+BuildRequires:	libstdc++-devel
+BuildRequires:	glibc-devel
+BuildRequires:	libgcc
+BuildRequires:	gmp-devel
+BuildRequires:	libgnat
+BuildRequires:	gcc-gnat
+BuildRequires:	make
+
 Requires:	xz
 Requires:	ncurses
 Requires:	expat
@@ -64,6 +73,8 @@ make
 
 %files
 # TODO: Add files
+/usr/bin/riscv64-linux-gnu-gdb
+/usr/bin/riscv64-linux-gnu-gdb-add-index
 
 %changelog
 * Tue Dec 26 2023 <WangTsing.Yan@gmail.com> - 14.1
