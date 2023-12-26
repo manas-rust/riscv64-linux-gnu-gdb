@@ -29,7 +29,7 @@ jobs:
       - name: Copr build ${{ matrix.package }}
         env:
           COPR_PR_WEBHOOK: https://copr.fedorainfracloud.org/webhooks/github/112270/aa50bb52-ed0a-49a4-b9b0-cedfb9815999/${{ matrix.package }}/
-          COPR_PUSH_WEBHOOK: https://copr.fedorainfracloud.org/webhooks/github/112270/aa50bb52-ed0a-49a4-b9b0-cedfb9815999/${{ matrix.package }}/
+          COPR_PUSH_WEBHOOK: ${{ secrets.COPR_PUSH_WEBHOOK }}/${{ matrix.package }}/
         run: |
           curl https://raw.githubusercontent.com/praiskup/copr-ci-tooling/main/copr-gh-actions-submit > submit
           bash submit ${{ github.event.pull_request.number }}
