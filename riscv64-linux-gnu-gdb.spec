@@ -63,7 +63,8 @@ mkdir -p build && cd build
 make
 
 %install
-make -C gdb install %{?_smp_mflags}
+cd build
+make %{?_smp_mflags} -C gdb install DESTDIR=$RPM_BUILD_ROOT
 
 
 %files
