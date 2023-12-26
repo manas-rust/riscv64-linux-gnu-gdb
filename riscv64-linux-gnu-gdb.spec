@@ -21,8 +21,10 @@ BuildRequires:	python3-devel
 BuildRequires:	source-highlight-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	glibc-devel
+BuildRequires:	glibc-static
 BuildRequires:	libgcc
 BuildRequires:	gmp-devel
+BuildRequires:	mpfr-devel
 BuildRequires:	libgnat
 BuildRequires:	gcc-gnat
 BuildRequires:	make
