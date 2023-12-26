@@ -12,7 +12,6 @@ URL:		https://www.gnu.org/software/gdb/
 
 Source0:	https://ftp.gnu.org/gnu/gdb/%{tarname}.tar.xz
 
-# BuildRequires:	boost
 BuildRequires:	texinfo
 BuildRequires:	readline-devel
 BuildRequires:	expat-devel
@@ -32,7 +31,7 @@ BuildRequires:	make
 Requires:	xz
 Requires:	ncurses
 Requires:	expat
-Requires:	python
+Requires:	python3
 Requires:	guile
 Requires:	gdb-headless
 Requires:	mpfr
