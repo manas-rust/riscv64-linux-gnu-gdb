@@ -65,12 +65,17 @@ make
 %install
 cd build
 make %{?_smp_mflags} -C gdb install DESTDIR=$RPM_BUILD_ROOT
+# Following files conflict with 'gdb'/'gdb-headless' packages
+rm -rf $RPM_BUILD_ROOT/usr/share/gdb
+rm -rf $RPM_BUILD_ROOT/usr/share/info
+rm -rf $RPM_BUILD_ROOT/usr/include/gdb
 
 
 %files
 # TODO: Add files
 /usr/bin/riscv64-linux-gnu-gdb
 /usr/bin/riscv64-linux-gnu-gdb-add-index
+/usr/share/man/*
 
 %changelog
 * Tue Dec 26 2023 <WangTsing.Yan@gmail.com> - 14.1
